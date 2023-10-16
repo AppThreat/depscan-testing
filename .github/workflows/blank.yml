@@ -1,4 +1,4 @@
-name: docker tests
+name: test
 
 on:
   workflow_dispatch:
@@ -12,6 +12,8 @@ jobs:
       fail-fast: false
     steps:
     - uses: actions/checkout@v4
+      with:
+        path: sample
     - uses: actions/checkout@v4
       with:
         repository: timmyteo/dep-scan
@@ -30,7 +32,7 @@ jobs:
         npm install -g @cyclonedx/cdxgen
     - name: Run depscan
       run: |
-        depscan --no-banner --cache -i .
+        depscan --no-banner --cache --bom ./sample/bom.json
       env:
         FETCH_LICENSE: true
         PYTHONPATH: "."
