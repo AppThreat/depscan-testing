@@ -1,13 +1,7 @@
 name: docker tests
 
 on:
-  push:
-    branches:
-      - master
-      - feature/*
-    paths-ignore:
-      - '**/README.md'
-  pull_request:
+  workflow_dispatch:
 jobs:
   version_tests:
     runs-on: ${{ matrix.os }}
