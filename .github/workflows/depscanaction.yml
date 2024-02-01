@@ -1,0 +1,17 @@
+name: Test depscan action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: juice-shop/juice-shop
+
+      - name: Run depscan action
+        uses: AppThreat/dep-scan-action@d6d94a27ab4a8fe36c286d1c8838172eedc0b26b
+        with:
+          thank_you: "I have not donated."
