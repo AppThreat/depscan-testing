@@ -12,6 +12,6 @@ jobs:
           repository: juice-shop/juice-shop
 
       - name: Run depscan action
-        uses: AppThreat/dep-scan-action@1d01b4fd1c3577b710b6b41ccd3f0bebcd943581
+        uses: AppThreat/dep-scan-action@571eda037e44e6116322df2d8803013943db4f94
         with:
           thank_you: "I have not donated."
